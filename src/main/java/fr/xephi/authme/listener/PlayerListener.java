@@ -178,10 +178,10 @@ public class PlayerListener implements Listener {
 
         String customJoinMessage = settings.getProperty(RegistrationSettings.CUSTOM_JOIN_MESSAGE);
         if (!customJoinMessage.isEmpty()) {
-            event.setJoinMessage(customJoinMessage
+            event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', customJoinMessage
                 .replace("{PLAYERNAME}", player.getName())
                 .replace("{DISPLAYNAME}", player.getDisplayName())
-                .replace("{DISPLAYNAMENOCOLOR}", ChatColor.stripColor(player.getDisplayName()))
+                .replace("{DISPLAYNAMENOCOLOR}", ChatColor.stripColor(player.getDisplayName())))
             );
         }
 
